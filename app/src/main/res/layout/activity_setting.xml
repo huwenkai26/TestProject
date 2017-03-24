@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/setting_toolbar"
+        toolbar:title="设置"
+        toolbar:titleTextColor="#fff"
+        android:layout_width="match_parent"
+        toolbar:navigationIcon="?attr/homeAsUpIndicator"
+        android:layout_height="wrap_content"
+        android:background="#22292C"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" >
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="通知"
+            android:textColor="#FF9b2A" />
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="新订单提醒"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:id="@+id/cb_mesg"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="20dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#ccc">
+
+        </View>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="声音"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:id="@+id/cb_Vol"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+             />
+        </RelativeLayout>
+        <TextView
+
+            android:paddingBottom="10dp"
+            android:id="@+id/tv_vol_note"
+            android:text="仅当后台运行才有声音提醒"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="#ccc"
+            android:layout_height="2px">
+
+        </View>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+
+                android:layout_marginBottom="10dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="震动"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:id="@+id/cb_vib"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+
+        <View
+
+            android:layout_width="match_parent"
+            android:background="#ccc"
+            android:layout_height="2px">
+
+        </View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="账号"
+            android:textColor="#FF9b2A" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="切换账号"
+                android:background="@drawable/tv_login_selector"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+
+
+        <View
+
+            android:layout_width="match_parent"
+            android:background="#ccc"
+            android:layout_height="2px">
+
+        </View>
+    </LinearLayout>
+
+
+</LinearLayout>

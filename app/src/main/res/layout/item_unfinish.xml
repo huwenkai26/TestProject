@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="7dp"
+        android:text="下单时间"
+        android:layout_weight="2.48" />
+
+   <LinearLayout
+       android:orientation="horizontal"
+       android:layout_marginBottom="30dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <TextView
+           android:id="@+id/desk_num"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:gravity="right"
+           android:text="三号桌."
+           android:textColor="#000"
+
+           android:textSize="30sp"
+         />
+
+       <TextView
+           android:id="@+id/pel_num"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+
+           android:layout_weight="1"
+           android:gravity="left"
+           android:text="5人"
+
+           android:textSize="15sp"
+           />
+   </LinearLayout>
+<View
+
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#CCC"
+    />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#CCC"
+        />
+</LinearLayout>
