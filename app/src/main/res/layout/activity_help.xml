@@ -3,17 +3,18 @@
     xmlns:toolbar="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/help_toolbar"
-        toolbar:title="忘记账号密码"
-        toolbar:titleTextColor="#fff"
         android:layout_width="match_parent"
-        toolbar:navigationIcon="?attr/homeAsUpIndicator"
         android:layout_height="wrap_content"
         android:background="#22292C"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" >
-    </android.support.v7.widget.Toolbar>
+        android:fitsSystemWindows="true"
+        android:theme="?attr/actionBarTheme"
+        toolbar:navigationIcon="?attr/homeAsUpIndicator"
+        toolbar:title="忘记账号密码"
+        toolbar:titleTextColor="#fff"></android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:padding="35dp"

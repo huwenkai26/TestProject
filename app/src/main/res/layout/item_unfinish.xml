@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="4dp"
+    android:background="@drawable/bg_parent_rounded_corner"
     android:layout_height="wrap_content"
     android:weightSum="1">
 
@@ -18,40 +22,40 @@
         android:text="下单时间"
         android:layout_weight="2.48" />
 
-   <LinearLayout
-       android:orientation="horizontal"
-       android:layout_marginBottom="30dp"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
-       <TextView
-           android:id="@+id/desk_num"
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           android:layout_weight="1"
-           android:gravity="right"
-           android:text="三号桌."
-           android:textColor="#000"
+        <TextView
+            android:id="@+id/desk_num"
 
-           android:textSize="30sp"
-         />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-       <TextView
-           android:id="@+id/pel_num"
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
+            android:text="三号桌"
+            android:textColor="#000"
 
-           android:layout_weight="1"
-           android:gravity="left"
-           android:text="5人"
+            android:textSize="30sp" />
 
-           android:textSize="15sp"
-           />
-   </LinearLayout>
-<View
+        <TextView
+            android:id="@+id/pel_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:gravity="left"
+            android:text=".5人"
+            android:textColor="#000"
+
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
 
     android:layout_width="match_parent"
-    android:layout_height="1dp"
+    android:layout_height="1sp"
     android:background="#CCC"
     />
     <android.support.v7.widget.RecyclerView
@@ -60,10 +64,5 @@
         android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
-    <View
 
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="#CCC"
-        />
 </LinearLayout>

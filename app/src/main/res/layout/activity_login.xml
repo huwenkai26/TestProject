@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:background="#f8f8f8">
-    <TextView
-        style="@style/TitleStyle"
-        android:text="登录"/>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#22292C"
+        android:fitsSystemWindows="true"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="登录"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            />
+
+    </android.support.v7.widget.Toolbar>
 
     <ImageView
         android:id="@+id/iv_logo"
@@ -18,11 +36,13 @@
         android:id="@+id/input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/iv_logo"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical">
+        android:layout_marginTop="29dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/iv_logo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-        <com.example.huwenkai.testproject.Views.CleanEditText
+        <com.klytech.huwenkai.crossfood.Views.CleanEditText
             android:id="@+id/et_email_phone"
             style="@style/login_edit_style"
             android:layout_marginLeft="35dp"
@@ -35,7 +55,7 @@
             android:layout_height="0.5dp"
             android:background="#f8f8f8" />
 
-        <com.example.huwenkai.testproject.Views.CleanEditText
+        <com.klytech.huwenkai.crossfood.Views.CleanEditText
             android:id="@+id/et_password"
             style="@style/login_edit_style"
             android:hint="密码"
@@ -55,32 +75,36 @@
 
             <TextView
                 android:id="@+id/tv_help"
-                android:textColor="#FF9B2A"
-                android:textSize="14sp"
-                android:layout_marginRight="35dp"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginRight="35dp"
                 android:text="帮助"
-                />
+                android:gravity="right"
+                android:textColor="#FF9B2A"
+                android:textSize="14sp" />
 
         </RelativeLayout>
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
+        android:layout_below="@+id/input_layout"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
         android:background="@drawable/btn_login_selector"
+        android:layout_alignLeft="@+id/input_layout"
+        android:layout_alignRight="@+id/input_layout"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:onClick="onClick"
         android:text="登录"
-
         android:textColor="#fff"
-        android:textSize="20sp"
-        android:layout_below="@+id/input_layout"
-        android:layout_centerHorizontal="true" />
+        android:textSize="20sp" />
 
 
 

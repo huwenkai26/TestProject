@@ -8,6 +8,7 @@
         android:id="@+id/setting_toolbar"
         toolbar:title="设置"
         toolbar:titleTextColor="#fff"
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         toolbar:navigationIcon="?attr/homeAsUpIndicator"
         android:layout_height="wrap_content"
