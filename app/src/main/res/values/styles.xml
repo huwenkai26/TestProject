@@ -31,7 +31,15 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="progress_dialog_1" >
+    <style name="progress_dialog_1"  parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="ProgressDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="ProgressDialogStyle" parent="@style/ProgressDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 </resources>

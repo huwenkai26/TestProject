@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.klytech.huwenkai.crossfood.Application.ActivityManager;
@@ -30,6 +31,12 @@ public class SettingActivity extends BaseActivity {
     TextView tvVolNote;
     @Bind(R.id.cb_vib)
     CheckBox cbVib;
+    @Bind(R.id.rl_mesg)
+    RelativeLayout rlmesg;
+    @Bind(R.id.rlvol)
+    LinearLayout rlvol;
+    @Bind(R.id.rlvib)
+    LinearLayout rlvib;
     private Toolbar setting_toolbar;
     private Intent it;
     private int userId;
@@ -92,21 +99,51 @@ public class SettingActivity extends BaseActivity {
     public void onClick() {
     }
 
-    @OnClick({R.id.cb_mesg, R.id.cb_Vol, R.id.cb_vib})
+    @OnClick({R.id.cb_mesg, R.id.cb_Vol, R.id.cb_vib,R.id.rl_mesg,R.id.rlvib,R.id.rlvol})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.rl_mesg:
+                rlmesgonclick();
+                break;
             case R.id.cb_mesg:
                 mesgonclick();
                 break;
             case R.id.cb_Vol:
                 VolOnClick();
                 break;
+            case R.id.rlvol:
+                rlVolOnClick();
+                break;
             case R.id.cb_vib:
                 VibOnClick();
+                break;
+            case R.id.rlvib:
+                rlVibOnClick();
                 break;
 
         }
     }
+
+    private void rlVibOnClick() {
+        if(cbMesg.isChecked()){
+        boolean checked = cbVib.isChecked();
+        cbVib.setChecked(!checked);
+        VibOnClick();}
+    }
+
+    private void rlVolOnClick() {
+        if(cbMesg.isChecked()){
+        boolean checked = cbVol.isChecked();
+        cbVol.setChecked(!checked);
+        VolOnClick();}
+    }
+
+    private void rlmesgonclick() {
+        boolean checked = cbMesg.isChecked();
+        cbMesg.setChecked(!checked);
+        mesgonclick();
+    }
+
 
     private void VibOnClick() {
         boolean Vibchecked = cbVol.isChecked();

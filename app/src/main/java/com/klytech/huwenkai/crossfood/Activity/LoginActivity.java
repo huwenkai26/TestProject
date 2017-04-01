@@ -13,7 +13,6 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.klytech.huwenkai.crossfood.Bean.User;
@@ -145,6 +144,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
         String passWord = MD5.shaEncrypt(passWord1);
         accountEdit.setEnabled(false);
         passwordEdit.setEnabled(false);
+        mDialog.setMessage("正在登录...");
         mDialog.show();
 
         Log.e("sha1", passWord);
@@ -159,31 +159,22 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
                              public void onError(Call call, Exception e, int id) {
                                  ToastUtil.show(LoginActivity.this,
                                          "网络错误");
-                                 try {
-                                     Thread.sleep(500);
-                                 } catch (InterruptedException e1) {
-                                     e.printStackTrace();
-                                 }
+
                                  accountEdit.setEnabled(true);
                                  passwordEdit.setEnabled(true);
 
                                  if (mDialog != null && mDialog.isShowing()) {
-                                     mDialog.dismissWithAnimation();
                                      mDialog.dismiss();
                                  }
                              }
 
                              @Override
                              public void onResponse(String response, int id) {
-                                 try {
-                                     Thread.sleep(500);
-                                 } catch (InterruptedException e1) {
-                                     e1.printStackTrace();
-                                 }
+
                                  accountEdit.setEnabled(true);
                                  passwordEdit.setEnabled(true);
                                  if (mDialog != null && mDialog.isShowing()) {
-                                     mDialog.dismissWithAnimation();
+
                                      mDialog.dismiss();
                                  }
                                  if (response.contains("code\":200")) {
@@ -224,12 +215,12 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
     public boolean checkInput(String account, String password) {
         // 账号为空时提示
         if (account == null || account.trim().equals("")) {
-            Toast.makeText(this, "账号不能为空", Toast.LENGTH_SHORT)
-                    .show();
+
+            ToastUtil.show(getApplication(),"账号不能为空");
         } else {
             if (password == null || password.trim().equals("")) {
-                Toast.makeText(this, "密码不能为空",
-                        Toast.LENGTH_SHORT).show();
+
+                ToastUtil.show(getApplication(),"密码不能为空");
             } else {
                 return true;
             }

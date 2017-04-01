@@ -69,7 +69,7 @@ public class MessageServier extends Service {
         userId = SpUtil.getInt(getApplicationContext(), ConstantValue.ID, 0);
         LogUtils.e("useid", userId + "");
         initInternet();
-        flags =Service.START_STICKY;
+
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -135,8 +135,9 @@ public class MessageServier extends Service {
 
             //todo 这里要判断是否开启消息提醒
             boolean isVib = SpUtil.getBoolean(getApplication(), ConstantValue.ISOPENVIB, false);
+            boolean iSsend = SpUtil.getBoolean(getApplication(), ConstantValue.SENDMESSAGE, false);
             LogUtils.e("ISvib",isVib+"");
-            if(isVib){
+            if(isVib&&iSsend){
             if(vib==null){
                 vib = (Vibrator) getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
             }
@@ -147,7 +148,7 @@ public class MessageServier extends Service {
             LogUtils.e("isVols",isVol+"");
 
             boolean Isbackground = isBackground(getApplicationContext());
-           if (Isbackground&&isVol)
+           if (Isbackground&&isVol&&iSsend)
                 PlaySound();
 
 

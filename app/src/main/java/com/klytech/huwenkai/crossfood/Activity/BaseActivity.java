@@ -7,13 +7,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
 
 import com.klytech.huwenkai.crossfood.Application.ActivityManager;
 import com.klytech.huwenkai.crossfood.Application.MyApplication;
-import com.klytech.huwenkai.crossfood.R;
-import com.klytech.huwenkai.crossfood.Views.CustomDialog;
+import com.klytech.huwenkai.crossfood.Views.ProgressDialog;
 
 import butterknife.ButterKnife;
 
@@ -23,7 +21,7 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseActivity extends AppCompatActivity {
     protected String TAG = this.getClass().getSimpleName();
-    protected CustomDialog mDialog = null;
+    protected ProgressDialog mDialog = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,10 +34,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initActionBar();
         if (mDialog == null) {
-            View progressBar = LayoutInflater.from(this).inflate(R.layout.progress_bar,null);
-            mDialog = new CustomDialog(this, R.style.progress_dialog_1);
+//            View progressBar = LayoutInflater.from(this).inflate(R.layout.progress_bar,null);
+            mDialog = ProgressDialog.createDialog(this);
 //            mDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-            mDialog.setContentView(progressBar);
+//            mDialog.setContentView(progressBar);
 //            mDialog.setTitleText("加载中...");
             mDialog.setCancelable(true);
         }

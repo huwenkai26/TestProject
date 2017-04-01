@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:toolbar="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/setting_toolbar"
-        toolbar:title="设置"
-        toolbar:titleTextColor="#fff"
-        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
-        toolbar:navigationIcon="?attr/homeAsUpIndicator"
         android:layout_height="wrap_content"
         android:background="#22292C"
+        android:fitsSystemWindows="true"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" >
+        android:theme="?attr/actionBarTheme"
+        toolbar:navigationIcon="?attr/homeAsUpIndicator"
+        toolbar:title="设置"
+        toolbar:titleTextColor="#fff">
 
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -33,9 +35,10 @@
             android:textColor="#FF9b2A" />
 
         <RelativeLayout
-
+            android:id="@+id/rl_mesg"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:onClick="onmesgClick">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -47,10 +50,10 @@
 
             <CheckBox
                 android:id="@+id/cb_mesg"
-                android:checked="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:checked="true"
                 android:paddingBottom="20dp" />
         </RelativeLayout>
 
@@ -64,6 +67,7 @@
 
 
     <LinearLayout
+        android:id="@+id/rlvol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -84,31 +88,32 @@
 
             <CheckBox
                 android:id="@+id/cb_Vol"
-                android:checked="true"
                 android:layout_width="wrap_content"
-                android:enabled="false"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-             />
+                android:checked="true"
+                android:enabled="false" />
         </RelativeLayout>
+
         <TextView
 
-            android:paddingBottom="10dp"
             android:id="@+id/tv_vol_note"
-            android:text="仅当后台运行才有声音提醒"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="仅当后台运行才有声音提醒" />
 
         <View
             android:layout_width="match_parent"
-            android:background="#ccc"
-            android:layout_height="2px">
+            android:layout_height="2px"
+            android:background="#ccc">
 
         </View>
     </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/rlvib"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -116,10 +121,10 @@
 
         <RelativeLayout
 
-                android:layout_marginBottom="10dp"
-
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -131,25 +136,25 @@
 
             <CheckBox
                 android:id="@+id/cb_vib"
-                android:checked="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:layout_alignParentRight="true" />
+                android:layout_alignParentRight="true"
+                android:checked="true"
+                android:enabled="false" />
         </RelativeLayout>
 
 
         <View
 
             android:layout_width="match_parent"
-            android:background="#ccc"
-            android:layout_height="2px">
+            android:layout_height="2px"
+            android:background="#ccc">
 
         </View>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/llLogout"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -159,29 +164,37 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+
             android:text="账号"
             android:textColor="#FF9b2A" />
 
+        <LinearLayout
+
+            android:id="@+id/llLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tv_login_selector"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:layout_marginTop="10dp"
                 android:text="切换账号"
-                android:background="@drawable/tv_login_selector"
                 android:textColor="#000"
                 android:textSize="20sp" />
 
 
+            <View
 
-        <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="#ccc">
 
-            android:layout_width="match_parent"
-            android:background="#ccc"
-            android:layout_height="2px">
+            </View>
+        </LinearLayout>
 
-        </View>
+
     </LinearLayout>
 
 
